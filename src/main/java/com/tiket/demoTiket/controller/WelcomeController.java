@@ -27,23 +27,17 @@ public class WelcomeController {
         //  encuentra en template
     }
 
-    @GetMapping({"/cursos/{curso}/{categoria}", "/cursos/{curso}"})//paso de variable
+    @GetMapping("/cursos/{curso}")//paso de variable
     @ResponseBody
     public String mostrarCurso(
-        @PathVariable String curso,
-        @PathVariable(required =  false) String categoria //para variable no requerida
+        @PathVariable String curso
          ){
 
-        if (categoria != null){
-            return "Curso "+ curso + "categoria " + categoria;
-        }
-        else{
+        
             return "Curso "+ curso ;
-        }
+        
         
     }
-
-
 
     
 }
